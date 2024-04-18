@@ -85,12 +85,12 @@ const App = () => {
             </div> 
   
             <div className="container mx-auto mt-8 p-4 sm:px-6 lg:px-8"> 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  
-                lg:grid-cols-4 gap-4"> 
-                    {food_recipes.map((recipe) => ( 
-                        <RecipeCard key={recipe.recipe.label} recipe={recipe.recipe} /> 
-                    ))} 
-                </div> 
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"> 
+                {food_recipes && food_recipes.map((recipe) => ( 
+                <RecipeCard key={recipe.recipe.label} recipe={recipe.recipe} /> 
+                ))} 
+            </div>
+
             </div> 
         </div> 
     ); 
