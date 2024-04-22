@@ -11,7 +11,7 @@ const App = () => {
         const fetchRecipes = async () => {
             try {
                 const response = await fetch(
-                    `${process.env.REACT_APP_API_URL}/search?q=${searchQuery}`
+                    `https://api.edamam.com/search?q=${searchQuery}&app_id=${process.env.APP_ID}&app_key=${process.env.API_KEY}`
                 );
                 if (response.ok) {
                     const data = await response.json();
