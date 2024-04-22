@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import RecipeCard from './RecipeCard';
+import './script'
 import './style.css';
 
 const App = () => {
