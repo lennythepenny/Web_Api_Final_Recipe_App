@@ -100,7 +100,7 @@ const App = () => {
                 );
                 if (response.ok) {
                     const data = await response.json();
-                    setFoodRecipes(data.hits || []); // Ensure foodRecipes is always an array
+                    setFoodRecipes(data.hits || []); 
                 } else {
                     console.error('Error fetching recipes:', response.statusText);
                 }
