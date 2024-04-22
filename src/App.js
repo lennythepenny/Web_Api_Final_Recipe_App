@@ -1,7 +1,6 @@
-// App.js 
-
 import React, { useEffect, useState } from 'react'; 
 import RecipeCard from './RecipeCard'; 
+import './style.css';
 
 const App = () => { 
 	const APP_ID = 'YOUR_API_ID'; 
