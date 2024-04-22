@@ -16,7 +16,7 @@ const App = () => {
 
             try {
                 const response = await fetch(
-                    `https://api.edamam.com/search?q=${searchQuery}&app_id=${process.env.APP_ID}&app_key=${process.env.API_KEY}`
+                    `https://api.edamam.com/search?q=${searchQuery}&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_API_KEY}`
                 );
                 if (response.ok) {
                     const data = await response.json();
