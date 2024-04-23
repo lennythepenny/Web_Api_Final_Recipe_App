@@ -8,13 +8,12 @@
   padding: 20px; 
 }
 
-.recipe-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-  gap: 20px; 
-  max-width: 1200px; 
-  width: 100%; 
+.recipe-card-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px; 
 }
+
 
 .App-logo {
   height: 40vmin;
