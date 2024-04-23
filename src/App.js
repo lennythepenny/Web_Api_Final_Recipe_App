@@ -99,7 +99,8 @@
 // export default App;
 import React, { useEffect, useState } from 'react';
 import RecipeCard from './RecipeCard';
-import './style.css';
+//import './style.css';
+import './App.css'
 
 const App = () => {
   const [foodRecipes, setFoodRecipes] = useState([]);
