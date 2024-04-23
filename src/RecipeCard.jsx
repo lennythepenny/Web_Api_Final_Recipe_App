@@ -50,8 +50,7 @@ const RecipeCard = ({ recipe }) => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d="M12 5v14m0 0V5m0  
-                                    0v14m0-14h14m-14 0H5"
+                  d="M12 5v14m0 0V5m0 0v14m0-14h14m-14 0H5"
                 />
               </svg>
               1.2K
