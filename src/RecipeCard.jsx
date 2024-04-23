@@ -1,5 +1,7 @@
 // RecipeCard.jsx
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp, faComment } from '@fortawesome/free-solid-svg-icons'; // Import the icons you want to use
 
 const RecipeCard = ({ recipe }) => {
   return (
@@ -39,37 +41,11 @@ const RecipeCard = ({ recipe }) => {
           </a>
           <div className="flex items-center text-gray-600">
             <span className="flex items-center mr-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 mr-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 5v14m0 0V5m0 0v14m0-14h14m-14 0H5"
-                />
-              </svg>
+              <FontAwesomeIcon icon={faThumbsUp} className="mr-1" /> {/* Replace the SVG with Font Awesome icon */}
               1.2K
             </span>
             <span className="flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 mr-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <FontAwesomeIcon icon={faComment} className="mr-1" /> {/* Replace the SVG with Font Awesome icon */}
               6
             </span>
           </div>
