@@ -1,7 +1,6 @@
-// RecipeCard.jsx
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThumbsUp, faComment } from '@fortawesome/free-solid-svg-icons'; // Import the icons you want to use
+import { faThumbsUp, faComment } from '@fortawesome/free-solid-svg-icons';
 
 const RecipeCard = ({ recipe }) => {
   return (
@@ -16,7 +15,7 @@ const RecipeCard = ({ recipe }) => {
           {recipe.dishType[0]}
         </div>
       </div>
-      <div className="p-4">
+      <div className="p-4 bg-white"> {/* Add a white background here */}
         <h1 className="text-2xl font-semibold text-gray-800 mb-2 capitalize">
           {recipe.label}
         </h1>
@@ -24,11 +23,11 @@ const RecipeCard = ({ recipe }) => {
           <span className="block mb-1">
             <b>Ingredients:</b>
           </span>
-          {recipe.ingredientLines.map((ingredient, index) => (
-            <span key={index} className="block pl-4">
-              {ingredient}
-            </span>
-          ))}
+          <ul className="list-disc pl-4"> {/* Use a list for Ingredients */}
+            {recipe.ingredientLines.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+          </ul>
         </div>
         <div className="flex items-center justify-between">
           <a
@@ -41,11 +40,11 @@ const RecipeCard = ({ recipe }) => {
           </a>
           <div className="flex items-center text-gray-600">
             <span className="flex items-center mr-4">
-              <FontAwesomeIcon icon={faThumbsUp} className="mr-1" /> {/* Replace the SVG with Font Awesome icon */}
+              <FontAwesomeIcon icon={faThumbsUp} className="mr-1" />
               1.2K
             </span>
             <span className="flex items-center">
-              <FontAwesomeIcon icon={faComment} className="mr-1" /> {/* Replace the SVG with Font Awesome icon */}
+              <FontAwesomeIcon icon={faComment} className="mr-1" />
               6
             </span>
           </div>

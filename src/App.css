@@ -8,17 +8,6 @@
   padding: 20px; 
 }
 
-.recipe-card-container {
-  display: flex;
-  justify-content: center;
-  margin: 20px; 
-  width: 100%;
-}
-
-.recipe-card {
-  max-width: 300px; 
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -54,6 +43,17 @@
   }
 }
 
+.recipe-card-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px; 
+  width: 100%;
+}
+
+.recipe-card {
+  max-width: 300px; 
+}
+
 .recipe-grid {
   width: 100%;
 }
@@ -73,6 +73,10 @@
   justify-content: center;
   width: 100%;
   margin-bottom: 20px; 
+}
+
+.ingredients-list {
+  margin-top: 5px;
 }
 
 .search-input {
