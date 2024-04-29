@@ -11,14 +11,16 @@ const RecipeCard = ({ recipe }) => {
           src={recipe.image}
           alt={recipe.label}
         />
-        <div className="absolute top-2 left-2 bg-indigo-500 text-white py-1 px-2 rounded">
-          {recipe.dishType[0]}
+        <div>
+          <label className="absolute top-2 left-2 bg-indigo-500 text-white py-1 px-2 rounded">
+            {recipe.mealType && recipe.mealType.length > 0 ? recipe.mealType[0] : "Unknown"}
+          </label>
         </div>
       </div>
       <div className="p-4 bg-white"> {/* Add a white background here */}
-        <h1 className="text-2xl font-semibold text-gray-800 mb-2 capitalize">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-2 capitalize">
           {recipe.label}
-        </h1>
+        </h2>
         <div className="text-gray-600 mb-4">
           <span className="block mb-1">
             <b>Ingredients:</b>
@@ -31,7 +33,7 @@ const RecipeCard = ({ recipe }) => {
         </div>
         <div className="flex items-center justify-between">
           <a
-            href={"/"}
+            href={recipe.url}
             target="_blank"
             rel="noopener noreferrer"
             className="text-indigo-500 font-semibold hover:underline"
@@ -41,7 +43,7 @@ const RecipeCard = ({ recipe }) => {
           <div className="flex items-center text-gray-600">
             <span className="flex items-center mr-4">
               <FontAwesomeIcon icon={faThumbsUp} className="mr-1" />
-              1.2K
+              1.2K{' '}{' '}
             </span>
             <span className="flex items-center">
               <FontAwesomeIcon icon={faComment} className="mr-1" />
