@@ -4,24 +4,24 @@ import { faThumbsUp, faComment } from '@fortawesome/free-solid-svg-icons';
 
 const RecipeCard = ({ recipe }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-transform hover:scale-105">
-      <div className="relative">
+    <div>
+      <div>
+        
+        <h2 style={{ marginLeft: '4px', marginTop: '4px' ,  marginBottom:'4px' }}>
+          {recipe.label}
+        </h2>
+        <label style={{ marginLeft: '4px' }}>
+          {recipe.mealType && recipe.mealType.length > 0 ? recipe.mealType[0] : "Unknown"}
+        </label>
+      </div>
         <img
+          style={{ display: 'block', margin: 'auto' }}
           className="w-full h-48 object-cover object-center rounded-t-lg"
           src={recipe.image}
           alt={recipe.label}
         />
-        <div>
-          <label className="absolute top-2 left-2 bg-indigo-500 text-white py-1 px-2 rounded">
-            {recipe.mealType && recipe.mealType.length > 0 ? recipe.mealType[0] : "Unknown"}
-          </label>
-        </div>
-      </div>
-      <div className="p-4 bg-white"> {/* Add a white background here */}
-        <h2 className="text-2xl font-semibold text-gray-800 mb-2 capitalize">
-          {recipe.label}
-        </h2>
-        <div className="text-gray-600 mb-4">
+        <div className="text-gray-600 mb-4"
+             style={{ marginLeft: '4px' }} >
           <span className="block mb-1">
             <b>Ingredients:</b>
           </span>
@@ -31,7 +31,8 @@ const RecipeCard = ({ recipe }) => {
             ))}
           </ul>
         </div>
-        <div className="flex items-center justify-between">
+        <div style={{ marginLeft: '4px' }}
+        className="flex items-center justify-between">
           <a
             href={recipe.url}
             target="_blank"
@@ -40,18 +41,7 @@ const RecipeCard = ({ recipe }) => {
           >
             View Recipe
           </a>
-          <div className="flex items-center text-gray-600">
-            <span className="flex items-center mr-4">
-              <FontAwesomeIcon icon={faThumbsUp} className="mr-1" />
-              1.2K{' '}{' '}
-            </span>
-            <span className="flex items-center">
-              <FontAwesomeIcon icon={faComment} className="mr-1" />
-              6
-            </span>
-          </div>
         </div>
-      </div>
     </div>
   );
 };

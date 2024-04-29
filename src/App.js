@@ -94,13 +94,13 @@ const App = () => {
           ) : foodRecipes.length === 0 ? (
             <p>No recipes found</p>
           ) : (
-            <div className="grid grid-cols-4 gap-4">
-              {foodRecipes.map((recipe) => (
-                <div key={recipe.recipe.label}>
-                  <RecipeCard recipe={recipe.recipe} />
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-4 gap-4" >
+            {foodRecipes.map((recipe) => (
+              <div key={recipe.recipe.label} style={{backgroundColor: "white"}}>
+                <RecipeCard recipe={recipe.recipe} />
+              </div>
+            ))}
+          </div>
           )}
         </div>
 
