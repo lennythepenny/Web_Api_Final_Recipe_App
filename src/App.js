@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 import './App.css';
 
@@ -6,6 +6,8 @@ const App = () => {
   const [foodRecipes, setFoodRecipes] = useState([]);
   const [searchRecipe, setSearchRecipe] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+  const [from, setFrom] = useState(0); // Initial value for pagination 
+  const pageSize = 20; // Number of recipes per page
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -18,7 +20,7 @@ const App = () => {
         const query = searchQuery || 'chicken';
 
         const response = await fetch(
-          `https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_API_KEY}`
+          `https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_API_KEY}&from=${from}&to=${from + pageSize}`
         );
 
         if (response.ok) {
@@ -35,7 +37,7 @@ const App = () => {
     };
 
     fetchRecipes();
-  }, [searchQuery]);
+  }, [searchQuery, from]);
 
   const handleSearchChange = (e) => {
     setSearchRecipe(e.target.value);
@@ -45,6 +47,17 @@ const App = () => {
     e.preventDefault();
     setSearchQuery(searchRecipe);
     setSearchRecipe('');
+    setFrom(0); // Reset pagination when performing a new search
+  };
+
+  const handlePaginationNext = () => {
+    setFrom(from + pageSize);
+  };
+
+  const handlePaginationPrev = () => {
+    if (from >= pageSize) {
+      setFrom(from - pageSize);
+    }
   };
 
   return (
@@ -89,6 +102,16 @@ const App = () => {
               ))}
             </div>
           )}
+        </div>
+
+        {/* Pagination controls */}
+        <div className="pagination-container items-center">
+          <button onClick={handlePaginationPrev} disabled={from === 0}>
+            Previous Page
+          </button>
+          <button onClick={handlePaginationNext} disabled={foodRecipes.length - from < 0}>
+            Next Page
+          </button>
         </div>
       </main>
     </div>
